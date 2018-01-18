@@ -40,11 +40,17 @@ $(function() {
          })
 
 
-        /* TODO: Write a test that loops through each feed
+        /* A test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-
+         it('each name of RSS is defined and not empty', function() {
+             for (var feed of allFeeds) {
+                 var name = feed.name;
+                 expect(name).toBeDefined();
+                 expect(name.length).not.toBe(0);
+             }
+         })
 
     });
 
