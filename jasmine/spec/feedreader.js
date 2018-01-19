@@ -110,10 +110,30 @@ $(function() {
     })
 
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
-
-        /* TODO: Write a test that ensures when a new feed is loaded
+    /* A new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function() {
+        /* A test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+         // initial page set up uses loadFeed(0)
+         var oldHeaderTitle = $('.header-title').text();
+         var newHeaderTitle;
+         beforeEach(function(done) {
+             // to load a new feed, we can choose 1, 2 or 3.
+             loadFeed(1, done);
+             newHeaderTitle = $('.header-title').text();
+         });
+         it('content changes when a new feed is loaded', function() {
+             expect(oldHeaderTitle).not.toEqual(newHeaderTitle);
+         });
+
+         // restore default load feed page
+         afterEach(function() {
+             loadFeed(0);
+         })
+
+    })
+
 }());
