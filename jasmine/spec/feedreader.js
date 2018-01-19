@@ -85,9 +85,9 @@ $(function() {
 
               isMenuHidden = $('body').hasClass('menu-hidden');
               expect(isMenuHidden).toBe(true);
-          })
+          });
 
-    })
+    });
 
 
     /* A new test suite named "Initial Entries" */
@@ -107,7 +107,7 @@ $(function() {
              done();
          });
 
-    })
+    });
 
 
     /* A new test suite named "New Feed Selection" */
@@ -132,8 +132,8 @@ $(function() {
          // restore default load feed page
          afterEach(function() {
              loadFeed(0);
-         })
+         });
 
-    })
+    });
 
 }());
