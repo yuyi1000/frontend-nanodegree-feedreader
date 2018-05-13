@@ -117,21 +117,23 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-         // initial page set up uses loadFeed(0)
-         var oldHeaderTitle = $('.header-title').text();
+         var oldHeaderTitle;
          var newHeaderTitle;
          beforeEach(function(done) {
+             // we use loadFeed(0) as old header title.
+             loadFeed(0, function() {
+                 oldHeaderTitle = $('.header-title').text();
+                 done();
+             });
              // to load a new feed, we can choose 1, 2 or 3.
-             loadFeed(1, done);
-             newHeaderTitle = $('.header-title').text();
+             loadFeed(1, function() {
+                 newHeaderTitle = $('.header-title').text();
+                 done();
+             });
          });
-         it('content changes when a new feed is loaded', function() {
+         it('content changes when a new feed is loaded', function(done) {
              expect(oldHeaderTitle).not.toEqual(newHeaderTitle);
-         });
-
-         // restore default load feed page
-         afterEach(function() {
-             loadFeed(0);
+             done();
          });
 
     });
