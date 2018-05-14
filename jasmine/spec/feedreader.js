@@ -123,12 +123,11 @@ $(function() {
              // we use loadFeed(0) as old header title.
              loadFeed(0, function() {
                  oldHeaderTitle = $('.header-title').text();
-                 done();
-             });
-             // to load a new feed, we can choose 1, 2 or 3.
-             loadFeed(1, function() {
-                 newHeaderTitle = $('.header-title').text();
-                 done();
+                 // to load a new feed, we can choose 1, 2 or 3.
+                 loadFeed(1, function() {
+                     newHeaderTitle = $('.header-title').text();
+                     done();
+                 });
              });
          });
          it('content changes when a new feed is loaded', function(done) {
