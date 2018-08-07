@@ -1,6 +1,8 @@
-# Project Overview
+# Feed Reader Testing
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+This feed reader is a web-based application that reads RSS feeds. It uses Google Feed Reader API to grab RSS feeds as JSON objects under the hook. I added four test suites: RSS Feeds - checking validity of each feed and its url and name, The Menu - checking if the menu hidden by default and shown by clicking on it, Initial Entities - checking if at least one item is within feed container, and lastly, New Feed Selection - checking if content changes when a new feed comes.
+
+
 
 
 ## How to run this project
